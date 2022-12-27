@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { LoggingServie } from 'shared/logging.service';
-import { ProductService } from 'shared/product.service';
+import { LoggingServie } from '../../../shared/logging.service';
+import { ProductService } from '../../../shared/product.service';
 
 @Component({
   selector: 'app-product',
@@ -21,6 +21,7 @@ constructor(private productService:ProductService,private logginService:LoggingS
 
 ngOnInit(): void {
     this.getFuntion();
+   
   }
 ;
 
@@ -32,7 +33,10 @@ productList:Product[]=[];
 
 getFuntion(){
 this.productService.getProduct().subscribe((data:Product[])=>{
+ 
   this.productList=data;
+  this.filteredList=data;
+ 
 })
 }
 
@@ -42,6 +46,7 @@ filter(){
   this.filteredList=[];
   for(let i=0;i<this.productList.length;i++){
     if(this.productList[i].name.includes(this.inp)){
+        console.log(this.productList[i]);
       this.filteredList.push(this.productList[i]);
     }
   }
@@ -66,6 +71,14 @@ outputEvent(product:Product){
 }
 
 
+newProduct():void{
+  this.productService.changeSelectedProduct(this.productService.newProduct());
+}
+
+productSelected(product:Product):void{
+  this.productService.changeSelectedProduct(product);
+}
+
 
 }
 
@@ -83,5 +96,3 @@ interface Product{
   rating:number,
   category:Category;
 }
-
-
