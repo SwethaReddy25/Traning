@@ -15,6 +15,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { EventBootComponent } from './event/event.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { DBServie } from 'shared/inmemoryeventdbservice';
+import { RepeatDataPipe } from './repeat.pipe';
 
 
 
@@ -30,7 +31,8 @@ import { DBServie } from 'shared/inmemoryeventdbservice';
    ProductComponent,
    StarComponent,
    ShoppingCartComponent,
-   EventBootComponent
+   EventBootComponent,
+   RepeatDataPipe
 
     
   ],

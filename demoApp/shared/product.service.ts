@@ -11,7 +11,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 export class ProductService{
     constructor(private http:HttpClient){}
 
-     private url:string='api/products';
+     private url:string='/api/products';
      products:Product[]=[];
 
 

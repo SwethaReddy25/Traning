@@ -8,7 +8,8 @@ import { LoggingServie } from 'shared/logging.service';
 })
 export class WelcomeComponent {
   constructor(private loggingService:LoggingServie){};
-
+  data:number=10;
+  name:string='swetha';
 
  
   thisFun(){
