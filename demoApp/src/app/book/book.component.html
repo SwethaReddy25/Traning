@@ -1,0 +1,206 @@
+<div class ="container bg-dark w-50" ><form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+        <h1 class="text-light text-center" > Book Form</h1>
+  
+        <!-- Book ID -->
+  
+        <p>
+  
+            <label class="text-light" for="id">Book Id</label>
+  
+            <input class="form-control"
+  
+            type="text" name="id" id="id" requried min = "1" formControlName="id">
+  
+   
+  
+        </p>
+  
+        <div *ngIf="id">
+  
+          <div *ngIf="!id.valid && (id.dirty || id.touched)">
+  
+   
+  
+            <div [hidden]="!id.errors?.['required']">
+  
+                Id is required
+                 
+   
+            </div>
+  
+  
+            </div>
+            
+   
+        </div>
+  
+  
+  
+  
+        <!-- Book Name -->
+  
+        <p>
+  
+            <label class="text-light" for="bookName">Book Name</label>
+  
+            <input class="form-control" type="text" name="bookName" id="bookName"
+  
+            formControlName="bookName">
+  
+   
+  
+        </p>
+  
+        <div *ngIf="bookName">
+  
+          <div  *ngIf="!bookName.valid && (bookName.dirty || bookName.touched)">
+  
+   
+  
+            <div [hidden]="!bookName.errors?.['required']">
+  
+                Book  Name is required
+  
+            </div>
+  
+   
+  
+            </div>
+  
+        </div>
+  
+  
+  
+        <!-- Book Author -->
+  
+  
+  
+        <div formGroupName="author">
+  
+   
+  
+          <!-- Author Name -->
+  
+          <p>
+  
+              <label class="text-light" for="authorName">Author Name</label>
+  
+              <input class="form-control"  type="text" name="authorName" id="authorName"
+  
+              formControlName="authorName">
+  
+  
+  
+          </p>
+  
+          <div *ngIf="authorName">
+  
+            <div *ngIf="!authorName.valid && (authorName.dirty || authorName.touched)">
+  
+  
+  
+              <div [hidden]="!authorName.errors?.['required']">
+  
+                Author Name is required
+  
+              </div>
+  
+  
+  
+              </div>
+  
+          </div>
+  
+          <!-- Author email -->
+  
+          <p>
+  
+              <label class="text-light" for="authorEmail">Author Email</label>
+  
+              <input  class="form-control" type="email" name="authorEmail" id="authorEmail"
+  
+              formControlName="authorEmail">
+  
+          </p>
+  
+          <div *ngIf="authorEmail">
+  
+            <div *ngIf="!authorEmail.valid && (authorEmail.dirty || authorEmail.touched)">
+  
+  
+  
+              <div [hidden]="!authorEmail.errors?.['required']">
+  
+                authorEmail is required
+  
+              </div>
+  
+  
+  
+            </div>
+  
+          </div>
+  
+        </div>  
+  
+  
+  
+    <!-- Date of publishing -->
+  
+        <p>
+  
+            <label class="text-light" for="dop">Date of Publishing</label>
+  
+            <input class="form-control" type="date" name="dop" id="dop"
+  
+            formControlName="dop">
+  
+   
+  
+        </p>
+  
+        <div *ngIf="dop">
+  
+          <div *ngIf="!dop.valid && (dop.dirty || dop.touched)">
+  
+   
+  
+            <div [hidden]="!dop.errors?.['required']">
+  
+                Date of publishing is required
+  
+            </div>
+  
+   
+  
+            </div>
+  
+          </div>
+  
+   
+  
+   
+  
+  
+  
+  
+   
+  
+        <button type="submit " class="btn btn-success" [disabled]="!bookForm.valid">Submit</button>
+  
+       
+  
+    </div>
+  
+   
+  
+    </form>
+    </div>
+  
+   
+  
+    {{bookForm.valid}}
+  
+    {{bookForm.value | json}}
