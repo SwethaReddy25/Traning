@@ -18,6 +18,10 @@ import { DBServie } from 'shared/inmemoryeventdbservice';
 import { RepeatDataPipe } from './repeat.pipe';
 import { TrusteeComponent } from './trustee/trustee.component';
 import { BookComponent } from './book/book.component';
+import { EmployeeArrayComponent } from './employee-array/employee-array.component';
+import { HomeComponent } from './home/home.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { AnimalDetailsComponent } from './Animals/animal-detail/animal-detail.component';
 
 
 
@@ -35,7 +39,11 @@ import { BookComponent } from './book/book.component';
    EventBootComponent,
    RepeatDataPipe,
    TrusteeComponent,
-   BookComponent
+   BookComponent,
+   EmployeeArrayComponent,
+   HomeComponent,
+   AboutUsComponent,
+   AnimalDetailsComponent
 
     
   ],

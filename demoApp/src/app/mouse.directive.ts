@@ -14,7 +14,7 @@ export class HighlightDirective {
 
   constructor(private el: ElementRef) {
 
-    this.el.nativeElement.style.backgroundColor = 'pink';
+    this.el.nativeElement.style.backgroundColor = 'orange';
 
   }
 

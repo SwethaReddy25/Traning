@@ -11,7 +11,7 @@ import { HighlightDirective } from './mouse.directive';
 
 @Component({
 
-  template: `<div  appHighlight='pink'>Highlight</div>`,
+  template: `<div  appHighlight='orange'>Highlight</div>`,
 
 })
 
@@ -75,7 +75,7 @@ describe('HighlightDirective', () => {
 
     const el = element.querySelector('div')?.style?.backgroundColor
 
-    expect(el).toEqual('pink')
+    expect(el).toEqual('orange')
 
   })
 

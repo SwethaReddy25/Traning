@@ -1,89 +1,157 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { isSuccess } from 'angular-in-memory-web-api';
+import { DatePipe } from '@angular/common';
+
+import { Component, OnInit } from '@angular/core';
+
+import { FormBuilder,FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormatWidth } from '@angular/common';
+
 
 @Component({
+
   selector: 'app-book',
+
   templateUrl: './book.component.html',
+
   styleUrls: ['./book.component.css']
+
 })
-export class BookComponent {
-  title='Book Form';
-  bookForm!: FormGroup;
-   constructor(private formBuilder:FormBuilder) {
-    //step 1 :you have to create form model
-    this.bookForm=this.formBuilder.group({
 
-         id:['1',[Validators.required,Validators.max(100)]],
-         bookName:['Harry Potter',[Validators.required,Validators.minLength(4)]],
-      
-         author:this.formBuilder.group({
-          
-          authorName:['J.K. Rowling',[Validators.required]],
-          authorEmail:['jkrowling@gmail.com',[Validators.required,Validators.email]],
+export class BookComponent implements OnInit {
 
-    
-         }),
-         dop:['',[Validators.required]]
 
-    })
-    
 
-  }
-  get id(){
+  bookForm!:FormGroup;
 
-    return this.bookForm.get("id");
+  constructor(private formBuilder:FormBuilder){
+
+   
 
   }
 
 
 
-  get bookName(){
 
-    return this.bookForm.get("bookName");
+  ngOnInit(): void {
+
+    this.bookForm = this.formBuilder.group({
+
+      books:this.formBuilder.array([])}
+
+    );
+
+  }
+
+ 
+
+  books():FormArray{
+
+    return this.bookForm.get("books") as FormArray;
 
   }
 
 
 
-  get authorName(){
+  newBook():FormGroup{
 
-    return this.bookForm.get('author')?.get("authorName");
+    return this.formBuilder.group({
+
+      id:['1',[Validators.required,Validators.max(100)]],
+
+      title:['Elements',[Validators.required,Validators.minLength(5)]],
+
+   
+
+      author:this.formBuilder.group({
+
+        authorName:['R.S. Agarwal',[Validators.required,Validators.minLength(5)]],
+
+        authorEmail:['rsagarwal@gmail.com',[Validators.required]]
 
 
+
+      }),
+
+      dateOf:["2022-02-02",[Validators.required]],
+
+      publishers:this.formBuilder.array([])
+
+    });
 
   }
 
 
 
-  get authorEmail(){
 
-    return this.bookForm.get('author')?.get("authorEmail");
+  addBook(){
+
+    this.books().push(this.newBook());
 
   }
+
+
+
+  removeBook(bookIndex:number){
+
+    this.books().removeAt(bookIndex);
+
+  }
+
+
+
+  bookPublishers(bookIndex:number):FormArray{
+
+    return this.books().at(bookIndex).get("publishers") as FormArray;
+
+  }
+
 
 
 
  
 
-  get dop(){
+newPublisher():FormGroup{
+
+  return this.formBuilder.group({
+
+    publisherName:'',
+
+    publishersEmail:'',
+
+    publishedDate:''
+
+  });
+
+}
 
 
 
-   return this.bookForm.get("dop");
+addBookPublish(bookIndex:number){
+
+  this.bookPublishers(bookIndex).push(this.newPublisher());
 
 
 
-  }
-  ngOnInit(): void {
 
-  }
+}
+
+removeBookPublish(bookIndex:number,publisherIndex:number){
+
+this.bookPublishers(bookIndex).removeAt(publisherIndex);
+
+}
+
+
 
 
 
   onSubmit(){
-    console.log("Success");
+
     console.log(this.bookForm.value);
 
+
+
   }
+
+
+
 }
