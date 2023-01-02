@@ -3,11 +3,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Subscription } from 'rxjs';
-import { Animal, AnimalService } from '../animal';
-
-
-
-
+import { Animal } from '../animal';
+import { AnimalService } from '../../../../shared/animal.service';
 
 @Component({
 
@@ -59,7 +56,7 @@ sub!:Subscription
 
        if(this.service.getAnimalById(this.id)){
 
-             this.animal = this.service.getAnimalById(this.id);
+          //   this.animal = this.service.getAnimalById(this.id);
 
        }
 

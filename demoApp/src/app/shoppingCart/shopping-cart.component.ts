@@ -1,5 +1,4 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { ProductComponent } from '../Product/product.component';
 
 
 @Component({

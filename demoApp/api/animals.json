@@ -1,0 +1,53 @@
+[
+    {
+      "id":1,
+  
+      "name":"Lion",
+  
+      "briefDescription":"King of Jungle",
+  
+      "image":"",
+  
+      "physicalStrength":4,
+  
+      "color":"Yelloish Orange",
+  
+      "category":"Category.wild"
+  
+      }
+  
+       ,{
+  
+      "id":2,
+  
+      "name":"Dog",
+  
+      "briefDescription":"King of weight",
+  
+      "image":"../../assets/gasStove.webp",
+  
+      "physicalStrength":2,
+  
+      "color":"Brown",
+  
+      "category":"Category.domestic"
+  
+    }
+  
+     ,{
+  
+      "id":3,
+  
+      "name":"Dog",
+  
+      "briefDescription":"Kind",
+  
+      "image":"../../assets/dog.jpg",
+  
+      "physicalStrength":1,
+  
+      "color":"White/Black",
+  
+      "category":"Category.domestic"
+    }
+  ]
