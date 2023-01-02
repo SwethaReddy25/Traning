@@ -25,6 +25,9 @@ import { AnimalDetailsComponent } from './Animals/animal-detail/animal-detail.co
 import { ProductAddComponent } from './Product/product-add.component';
 import { ProductsListComponent } from './Product/products-list.component';
 import { AnimalAddComponent } from './Animals/animal-add.component';
+import { ShellComponent } from './home/shell.component';
+import { LoginComponent } from './user/login.component';
+import { MenuComponent } from './home/menu.component';
 
 
 
@@ -49,7 +52,10 @@ import { AnimalAddComponent } from './Animals/animal-add.component';
    AnimalDetailsComponent,
    ProductAddComponent,
    ProductsListComponent,
-   AnimalAddComponent
+   AnimalAddComponent,
+   ShellComponent,
+   LoginComponent,
+   MenuComponent
 
     
   ],

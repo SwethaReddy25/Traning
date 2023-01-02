@@ -1,0 +1,45 @@
+
+<div class="card bg-primary w-50 m-auto  "><div class="card-header ">
+   <h1 class =" text-center text-light">{{pageTitle}}</h1> 
+</div>
+
+<div class="card-body bg-dark text-light p-5">
+<form  #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+
+<div class="form-group">
+    <p>
+    <label for="userName">User Name</label>
+    <input type="text" name="userName" id="userName"
+    #userName="ngModel"
+    ngModel
+    class="form-control"
+    required
+    >
+
+
+    </p>
+
+<p>
+    <label for="password">password</label>
+    <input type="text" name="password" id="password"
+    #password="ngModel"
+    ngModel
+    class="form-control"
+    required
+    >
+
+
+    </p>
+    <a class="btn btn-light" (click)="cancel()">Cancel Navigation</a>
+
+    <button class="btn btn-success ms-5" [disabled]="!loginForm.valid">Log In</button>
+</div>
+
+</form>
+
+
+</div>
+
+
+
+</div>
