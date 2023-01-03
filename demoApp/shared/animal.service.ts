@@ -259,9 +259,6 @@ changeSelectedAnimal(selectedAnimal:Animal | null):void{
          //pushing the new data new Product to the products array
 
          this.animals.push(data);
-
-
-
         },
 
         catchError(this.errorHandler)
@@ -317,17 +314,7 @@ changeSelectedAnimal(selectedAnimal:Animal | null):void{
     );
 
 
-
-
-
-
-
   }
-
-
-
-
-
 
   //update a product
 
@@ -421,9 +408,5 @@ changeSelectedAnimal(selectedAnimal:Animal | null):void{
    }
 
 
-
-
-
-
-
+   
 }
