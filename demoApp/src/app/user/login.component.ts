@@ -10,6 +10,7 @@ import { AuthService } from './auth.service';
 })
 export class LoginComponent implements OnInit {
 pageTitle:string='Log In';
+  loginForm: any;
   constructor(private authService:AuthService,private router:Router) { }
 
   ngOnInit(): void {

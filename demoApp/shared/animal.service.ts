@@ -239,35 +239,14 @@ changeSelectedAnimal(selectedAnimal:Animal | null):void{
 
   createAnimal(animal:Animal):Observable<Animal>{
     console.log(animal)
-
-     //headers variable to set request headers
-
     const headers= new HttpHeaders({'Content-Type':'application/json'});
-
-    //const size = this.getProducts.length;
-
-   // const id =size+1;
-
-        //newProduct spread across product
 
       const newAnimal={...animal,id:null};
       console.log(newAnimal)
 
     console.log(`in create method  ${this.url}`)
 
-
-
-      //return logic starts here
-
-      //http .post method
-
-      //generics method -- IProduct
-
-      //args --3 url , newProduct ,headers
-
-      //this.url -- declared in the class outside the functions
-
-      return     this.http.post<Animal>(this.url,this.newAnimal,{headers})
+      return     this.http.post<Animal>(this.url,newAnimal,{headers})
 
       .pipe(
 

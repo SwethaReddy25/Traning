@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AnimalService } from 'shared/animal.service';
 import { GenericValidator } from 'shared/genericvalidator';
-import { Animal } from './animal';
+import { Animal, Category } from './animal';
 
 @Component({
   selector: 'app-animal-add',
@@ -62,7 +62,7 @@ export class AnimalAddComponent implements OnInit ,OnDestroy {
       color:['',[Validators.required]],
       briefDescription:['',[Validators.required]],
       image:['',[Validators.required]],
-      category:['',[Validators.required]],
+      category:[Category.wild,[Validators.required]],
       physicalStrength:[3,[Validators.required]]
 
     });
@@ -145,9 +145,6 @@ export class AnimalAddComponent implements OnInit ,OnDestroy {
    console.log(originalAnimal)
     if(this.addAnimal.valid){
       if(this.addAnimal.dirty){
-        //copy over all of the orginal product properties
-        //we arecopying data from teh addform
-        //{...} it ensures that values are not lost ids are retained
         const animal={...originalAnimal,...this.addAnimal.value};
 
       if(animal.id==0){
@@ -155,9 +152,12 @@ export class AnimalAddComponent implements OnInit ,OnDestroy {
         this.animalService.createAnimal(animal).subscribe(
           (resp)=>{
             this.animalService.changeSelectedAnimal(resp);
-            console.log(resp);},
+            console.log('AnimalAdd save animal method '+ resp);},
 
-          (err)=>this.errorMessage=err
+          (err)=> {this.errorMessage=err;
+            console.log('AnimalAdd save animal method '+err);
+          }
+
         );
 
      }
