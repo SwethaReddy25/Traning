@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shell.component.css']
 })
 export class ShellComponent implements OnInit {
-
+  msg:string='hello there'
   constructor() { }
 
   ngOnInit(): void {

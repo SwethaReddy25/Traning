@@ -28,6 +28,7 @@ import { AnimalAddComponent } from './Animals/animal-add.component';
 import { ShellComponent } from './home/shell.component';
 import { LoginComponent } from './user/login.component';
 import { MenuComponent } from './home/menu.component';
+import { GreetingComponent } from './greetings/greetings.component';
 
 
 
@@ -55,7 +56,8 @@ import { MenuComponent } from './home/menu.component';
    AnimalAddComponent,
    ShellComponent,
    LoginComponent,
-   MenuComponent
+   MenuComponent,
+   GreetingComponent
 
     
   ],
