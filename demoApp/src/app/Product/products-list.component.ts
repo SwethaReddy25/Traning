@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
-import { ProductService } from 'shared/product.service';
+import { ProductService } from 'src/app/shared/product.service';
 import { Category, IProduct } from './product';
 
 @Component({

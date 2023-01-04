@@ -1,5 +1,5 @@
 <div class="card"
-   *ngIf="product">
+   ngIf="product">
    <div class="card-header"><h2 class="text-center">{{pageTitle}}</h2></div>
     <div class="card-body">
     <form [formGroup]="addProduct"
@@ -52,7 +52,7 @@
       <button [disabled]='!addProduct.valid ||!addProduct.dirty' class="btn btn-success">Save Product</button>
     </form>
     </div>
-    <div class='alert alert-danger' *ngIf="errorMessage">
+    <div class='alert alert-danger' ngIf="errorMessage">
       Error : {{errorMessage}}
     </div>
   </div>

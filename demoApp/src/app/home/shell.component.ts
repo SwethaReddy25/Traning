@@ -7,9 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShellComponent implements OnInit {
   msg:string='hello there'
-  constructor() { }
+  constructor() { console.log('Shell constructor');}
+
+  ngOnDestroy(): void {
+
+  console.log('shell destroyed');}
 
   ngOnInit(): void {
+
+    console.log('in oninit');
+
   }
+  ngOnChanges():void{
+
+   console.log('shell component changes');
+
+  }
+
+  
+  
 
 }

@@ -2,8 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { AnimalService } from 'shared/animal.service';
-import { GenericValidator } from 'shared/genericvalidator';
+import { AnimalService } from 'src/app/shared/animal.service';
+import { GenericValidator } from 'src/app/shared/genericvalidator';
 import { Animal, Category } from './animal';
 
 @Component({

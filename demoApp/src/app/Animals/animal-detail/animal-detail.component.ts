@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { Subscription } from 'rxjs';
 import { Animal } from '../animal';
-import { AnimalService } from '../../../../shared/animal.service';
+import { AnimalService } from '../../shared/animal.service';
 
 @Component({
 

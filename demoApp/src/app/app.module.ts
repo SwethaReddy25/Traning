@@ -7,14 +7,14 @@ import { PentHouseComponent2 } from './pent-house/pent-house.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { FlagListComponent } from './flats/flag-list.component';
 import { AnimalsListComponent } from './Animals/animal-list.component';
-import { FormsModule, NgModel, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule, NgModel, ReactiveFormsModule } from '@angular/forms';
 
 import { StarComponent } from './star/star.component';
 import { ShoppingCartComponent } from './shoppingCart/shopping-cart.component';
 import {HttpClientModule} from '@angular/common/http';
 import { EventBootComponent } from './event/event.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { DBServie } from 'shared/inmemoryeventdbservice';
+import { DBServie } from 'src/app/shared/inmemoryeventdbservice';
 import { RepeatDataPipe } from './repeat.pipe';
 import { TrusteeComponent } from './trustee/trustee.component';
 import { BookComponent } from './book/book.component';
@@ -29,6 +29,9 @@ import { ShellComponent } from './home/shell.component';
 import { LoginComponent } from './user/login.component';
 import { MenuComponent } from './home/menu.component';
 import { GreetingComponent } from './greetings/greetings.component';
+import { CardListComponent } from './cards/cardlist.component';
+import { CardComponent } from './cards/card.component';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -57,7 +60,9 @@ import { GreetingComponent } from './greetings/greetings.component';
    ShellComponent,
    LoginComponent,
    MenuComponent,
-   GreetingComponent
+   GreetingComponent,
+   CardListComponent,
+   CardComponent
 
     
   ],
@@ -67,7 +72,9 @@ import { GreetingComponent } from './greetings/greetings.component';
     FormsModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(DBServie),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormBuilder,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

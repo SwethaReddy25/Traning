@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'greetings',
@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class GreetingComponent implements OnInit {
   @Input() messageText:string='Welcome to angular content projection'
-  constructor() {console.log('greeting constructed') }
+  constructor(private renderer:Renderer2) {console.log('greeting constructed') }
   ngOnDestroy(): void {
     console.log('greeting destroyed');}
 
@@ -39,6 +39,11 @@ export class GreetingComponent implements OnInit {
     console.log('greeting view checked');
 
    }
+   displayMessage():string{
+
+    return this.messageText;
+
+  }
 
   }
   

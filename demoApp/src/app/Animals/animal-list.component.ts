@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
-import { AnimalService } from 'shared/animal.service';
+import { AnimalService } from 'src/app/shared/animal.service';
 import { Animal } from './animal';
 
 
