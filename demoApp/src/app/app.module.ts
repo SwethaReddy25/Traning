@@ -7,7 +7,7 @@ import { PentHouseComponent2 } from './pent-house/pent-house.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { FlagListComponent } from './flats/flag-list.component';
 import { AnimalsListComponent } from './Animals/animal-list.component';
-import { FormBuilder, FormsModule, NgModel, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, NgModel, ReactiveFormsModule } from '@angular/forms';
 
 import { StarComponent } from './star/star.component';
 import { ShoppingCartComponent } from './shoppingCart/shopping-cart.component';
@@ -32,6 +32,11 @@ import { GreetingComponent } from './greetings/greetings.component';
 import { CardListComponent } from './cards/cardlist.component';
 import { CardComponent } from './cards/card.component';
 import { CommonModule } from '@angular/common';
+import { TodoModule } from './todo/todo.module';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
+
 
 
 
@@ -62,7 +67,8 @@ import { CommonModule } from '@angular/common';
    MenuComponent,
    GreetingComponent,
    CardListComponent,
-   CardComponent
+   CardComponent,
+   
 
     
   ],
@@ -73,10 +79,14 @@ import { CommonModule } from '@angular/common';
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(DBServie),
     ReactiveFormsModule,
-    FormBuilder,
-    CommonModule
+    StoreModule.forRoot({}),
+    StoreDevtoolsModule.instrument(),
+    CommonModule,
+    EffectsModule.forRoot([])
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

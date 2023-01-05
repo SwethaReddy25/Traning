@@ -23,10 +23,8 @@ describe('ProductAddComponent', () => {
     fixture.detectChanges();
   });
 
-  // it('should create', () => {
-  //   expect(component).toBeTruthy();
-  // });
-  // Product Name
+  
+  //  Name
 
   it('should check Product Name', () => {
     const e1 =fixture.debugElement.query(By.css('#name'));
@@ -45,13 +43,13 @@ describe('ProductAddComponent', () => {
 
   it('should check ProductName input value is correct', () => {
     let name=component.addProduct.controls['name'];
-    name.setValue('SwethaRedd');
+    name.setValue('Iphone');
     expect(name.errors).toBeNull();    
 
   });
   
 
-//Product Price
+//Price
 
   it('should check Price', () => {
     const e1 =fixture.debugElement.query(By.css('#price'));
@@ -68,7 +66,7 @@ describe('ProductAddComponent', () => {
     expect(e1.nativeElement.getAttribute('name')).toEqual('price');
   });
 
-  //Image
+  //Image 
 
   it('should check Image', () => {
     const e1 =fixture.debugElement.query(By.css('#image'));

@@ -3,6 +3,7 @@ import {InMemoryDbService, RequestInfo} from 'angular-in-memory-web-api';
 import { Observable } from "rxjs";
 import { IEvent } from "src/app/event/event";
 import { Category } from "src/app/Product/product";
+import { Todo } from "../todo/todo.model";
 
 
 
@@ -12,6 +13,7 @@ import { Category } from "src/app/Product/product";
 export class DBServie implements InMemoryDbService {
 
     createDb() {
+      const todos: Todo[]=[{id:'1',content:'hello'},{id:'2',content:'todo task'}];
         
        //const events: IEvent[]=[
         //{
@@ -197,7 +199,7 @@ export class DBServie implements InMemoryDbService {
     }
   ]
   
-  return {products,animals};
+  return {products,animals,todos};
        
     }
 
