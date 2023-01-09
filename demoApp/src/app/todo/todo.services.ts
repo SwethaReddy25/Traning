@@ -10,7 +10,7 @@ import { Todo } from "./todo.model";
 export class ToDoService{
   constructor(private http:HttpClient){}
 
-  public url='/api/todos';
+  public url='/api/todos/';
 
 getTodos():Observable<Todo[]>{
  return this.http.get<Todo[]>(this.url).pipe(

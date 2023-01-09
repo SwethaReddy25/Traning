@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { catchError, Observable, tap , BehaviorSubject, throwError, map } from "rxjs";
-import { Category, IProduct } from "src/app/Product/product";
+import { Category, IProduct } from "src/app/products/product";
 
 
 @Injectable({
@@ -144,7 +144,7 @@ changeSelectedProduct(selectedProduct:IProduct | null):void{
 
          console.log('in create new product'+ JSON.stringify(data));
          //pushing the new data new Product to the products array
-         this.products.push(data);
+        // this.products.push(data);
 
         },
         catchError(this.errorHandler)
@@ -165,8 +165,8 @@ changeSelectedProduct(selectedProduct:IProduct | null):void{
         console.log('deleted prd'+id);
        const foundIndex = this.products.findIndex(item=>item.id===id);
        //if product id is not found means index returned will be -1
-       if(foundIndex > -1)
-       this.products.splice(foundIndex,1);
+       //if(foundIndex > -1)
+       //this.products.splice(foundIndex,1);
 
 
       },
@@ -197,8 +197,8 @@ changeSelectedProduct(selectedProduct:IProduct | null):void{
       tap(()=>{console.log('fetch product'+id);
        this.foundIndex =this.products.findIndex(item=>item.id ==id);
       if(this.foundIndex > -1){
-        this.products[this.foundIndex];
-          }
+       this.products[this.foundIndex];
+         }
       }),
       map(()=>this.products[this.foundIndex]),
       catchError(this.errorHandler)
@@ -220,9 +220,9 @@ changeSelectedProduct(selectedProduct:IProduct | null):void{
 
     tap(()=>{console.log('update product'+product.id);
     const foundIndex =this.products.findIndex(item=>item.id === product.id);
-    if(foundIndex > -1){
-      this.products[foundIndex]=product;
-        }
+    // if(foundIndex > -1){
+    //   this.products[foundIndex]=product;
+    //     }
     }),
     map(()=>product),
     catchError(this.errorHandler)

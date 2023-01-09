@@ -4,7 +4,7 @@ import { Injectable } from "@angular/core";
 
 import { catchError, Observable, tap , BehaviorSubject, throwError, map } from "rxjs";
 
-import { Animal, Category } from "src/app/Animals/animal";
+import { Animal, Category } from "src/app/animals/animal";
 
 
 
@@ -258,7 +258,7 @@ changeSelectedAnimal(selectedAnimal:Animal | null):void{
 
          //pushing the new data new Product to the products array
 
-         this.animals.push(data);
+        // this.animals.push(data);
         },
 
         catchError(this.errorHandler)
@@ -297,9 +297,7 @@ changeSelectedAnimal(selectedAnimal:Animal | null):void{
 
        //if product id is not found means index returned will be -1
 
-       if(foundIndex > -1)
-
-       this.animals.splice(foundIndex,1);
+       
 
 
 
@@ -340,11 +338,7 @@ changeSelectedAnimal(selectedAnimal:Animal | null):void{
 
        this.foundIndex =this.animals.findIndex(item=>item.id ==id);
 
-      if(this.foundIndex > -1){
-
-        this.animals[this.foundIndex];
-
-          }
+     
 
       }),
 
@@ -384,11 +378,11 @@ changeSelectedAnimal(selectedAnimal:Animal | null):void{
 
     const foundIndex =this.animals.findIndex(item=>item.id === animal.id);
 
-    if(foundIndex > -1){
+    // if(foundIndex > -1){
 
-      this.animals[foundIndex]=animal;
+    //   this.animals[foundIndex]=animal;
 
-        }
+    //     }
 
     }),
 

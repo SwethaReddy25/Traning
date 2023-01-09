@@ -1,6 +1,6 @@
 import { getTestBed, TestBed } from "@angular/core/testing";
 import { of } from "rxjs";
-import { Category, IProduct } from "src/app/Product/product";
+import { Category, IProduct } from "src/app/products/product";
 import { ProductService } from "./product.service";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from "@angular/router/testing";

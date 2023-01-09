@@ -2,8 +2,8 @@ import { Injectable } from "@angular/core";
 import {InMemoryDbService, RequestInfo} from 'angular-in-memory-web-api';
 import { Observable } from "rxjs";
 import { IEvent } from "src/app/event/event";
-import { Category } from "src/app/Product/product";
-import { Todo } from "../todo/todo.model";
+import { Category, IProduct } from "src/app/products/product";
+import { Todo } from "./todo/todo.model";
 
 
 
@@ -102,7 +102,7 @@ export class DBServie implements InMemoryDbService {
 
        
 
-      const products=[
+      const products:IProduct[]=[
         {
           "id":1,
           "name":"Gas Stove",
@@ -115,7 +115,7 @@ export class DBServie implements InMemoryDbService {
           "id":2,
           "name":"Samsung Guru",
           "price":4000,
-          "image":"../../assets/samsungGuru.avif",
+          "image":"../../assets/samg.jpg",
           "rating":3,
           "category":Category.electrics
         }
