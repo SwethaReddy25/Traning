@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FlagListComponent } from './flag-list.component';
+import { FlatListComponent } from "./flat-list.component";
 
-describe('FlagListComponent', () => {
-  let component: FlagListComponent;
-  let fixture: ComponentFixture<FlagListComponent>;
+describe('FlatListComponent', () => {
+  let component: FlatListComponent;
+  let fixture: ComponentFixture<FlatListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FlagListComponent ]
+      declarations: [ FlatListComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(FlagListComponent);
+    fixture = TestBed.createComponent(FlatListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -15,90 +15,90 @@ export class DBServie implements InMemoryDbService {
     createDb() {
       const todos: Todo[]=[{id:'1',content:'hello'},{id:'2',content:'todo task'}];
         
-       //const events: IEvent[]=[
-        //{
-          //  "id":"101",
-           // "name":"BootCamp",
-            //"date":"2022-12-31",
-            //"time":"16-30-00",
-            //"price":399,
-            //"imageUrl": "#",
-            //"location": {
-              //  "address":"Jai Jai Ram Muhalla",
-                //"city":"Kasganj",
-                //"country":"India"
-                //},
-            //"session" :[
-              //  {
-                //    "id":"10101",
-                  //  "name":"Batch 1",
-                   // "presenter":"Ms. Shalu Sharma",
-                    //"duration":"90",
-                    //"level":"Beginner",
-                    //"voters":["Shashwat","Suyash","Harshvardhan","Atharv","Upagya","Tanisha","Madhav","Ojaswini","Arav"]
+       const events: IEvent[]=[
+        {
+           "id":"1",
+           "name":"Avatar",
+            "date":"2022-12-31",
+            "time":"16-30-00",
+            "price":400,
+            "imageUrl": "../../assets/avatar.jpg",
+            "location": {
+               "address":"cine plant",
+                "city":"Kompally",
+                "country":"India"
+                },
+            "session" :[
+               {
+                   "id":"10101",
+                   "name":"Batch 1",
+                   "presenter":"Ms. Shalu Sharma",
+                    "duration":"90",
+                    "level":"Beginner",
+                    "voters":["Shashwat","Suyash","Harshvardhan","Atharv","Upagya","Tanisha","Madhav","Ojaswini","Arav"]
                     
-              //  },{
-                //    "id":"10102",
-                  //  "name":"Batch 1",
-                    //"presenter":"Ms. Shalu Sharma",
-                   // "duration":"90",
-                   // "level":"Beginner",
-                   // "voters":["Shashwat","Suyash","Harshvardhan","Atharv","Upagya","Tanisha","Madhav","Ojaswini","Arav"]
+               },{
+                   "id":"10102",
+                   "name":"Batch 1",
+                    "presenter":"Ms. Shalu Sharma",
+                   "duration":"90",
+                   "level":"Beginner",
+                   "voters":["Shashwat","Suyash","Harshvardhan","Atharv","Upagya","Tanisha","Madhav","Ojaswini","Arav"]
                     
-                //}
-            //]   
-        //},
-        //{
-           // "id":"101",
-           // "name":"BootCamp",
-            //"date":"2022-12-31",
-           // "time":"16-30-00",
-            //"price":399,
-           // "imageUrl": "#",
-           // "location": {
-             //   "address":"Jai Jai Ram Muhalla",
-               // "city":"Kasganj",
-               // "country":"India"
-               // },
-            //"session" :[
-                //{
-                   // "id":"10101",
-                  //  "name":"Batch 1",
-                    //"presenter":"Ms. Shalu Sharma",
-                  //  "duration":"90",
-                //    "level":"Beginner",
-              //      "voters":["Shashwat","Suyash","Harshvardhan","Atharv","Upagya","Tanisha","Madhav","Ojaswini","Arav"]
+                }
+            ]   
+        },
+        {
+           "id":"2",
+           "name":"Dhamaka",
+            "date":"2022-12-31",
+           "time":"16-30-00",
+            "price":350,
+           "imageUrl": "../../assets/dhamaka.jpg",
+           "location": {
+               "address":"prasad ",
+               "city":"hyderbad",
+               "country":"India"
+               },
+            "session" :[
+                {
+                   "id":"10101",
+                   "name":"Batch 1",
+                    "presenter":"Ms. Shalu Sharma",
+                   "duration":"90",
+                   "level":"Beginner",
+                   "voters":["Shashwat","Suyash","Harshvardhan","Atharv","Upagya","Tanisha","Madhav","Ojaswini","Arav"]
                     
-            //    }
-          //  ]   
-        //},
-        //{
-            //"id":"101",
-           // "name":"BootCamp",
-            //"date":"2022-12-31",
-            //"time":"16-30-00",
-            //"price":399,
-            //"imageUrl": "#",
-           // "location": {
-                //"address":"Jai Jai Ram Muhalla",
-                //"city":"Kasganj",
-               // "country":"India"
-             //   },
-           // "session" :[
-               // {
-                    //"id":"10101",
-                    //"name":"Batch 1",
-                   // "presenter":"Ms. Shalu Sharma",
-                 //   "duration":"90",
-                   // "level":"Beginner",
-                 //   "voters":["Shashwat","Suyash","Harshvardhan","Atharv","Upagya","Tanisha","Madhav","Ojaswini","Arav"]
+               }
+           ]   
+        },
+        {
+            "id":"3",
+           "name":"HIT 2",
+            "date":"2022-12-31",
+            "time":"16-30-00",
+            "price":350,
+            "imageUrl": "../../assets/hit2.jpg",
+           "location": {
+                "address":"forum",
+                "city":"Kutupally",
+               "country":"India"
+               },
+           "session" :[
+               {
+                    "id":"10101",
+                    "name":"Batch 1",
+                   "presenter":"Ms. Shalu Sharma",
+                   "duration":"90",
+                   "level":"Beginner",
+                   "voters":["Shashwat","Suyash","Harshvardhan","Atharv","Upagya","Tanisha","Madhav","Ojaswini","Arav"]
                     
-             //   }
-           // ]   
-      //  }
-      // ]
+               }
+           ]   
+       }
+      ]
 
-      // return {events};
+     
 
        
 
@@ -199,7 +199,7 @@ export class DBServie implements InMemoryDbService {
     }
   ]
   
-  return {products,animals,todos};
+  return {products,animals,todos,events};
        
     }
 

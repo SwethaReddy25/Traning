@@ -1,0 +1,13 @@
+.card1{
+    max-width: 400px;
+    max-height: 300px;
+    margin: 10px;
+    background-color: teal;
+    border:1px dotted red;
+  }
+  
+  .header{
+    text-align: center;
+    color:white;
+    padding-left:150px;
+  }

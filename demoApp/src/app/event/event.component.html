@@ -7,24 +7,68 @@
     <title>Document</title>
 </head>
 <body>
-
-
-        
+<!--         
 <div class="card" style="width: 18rem;" >
+  <h1>This is event </h1>
    
-    <div class="card-body" *ngFor="let event of eventList">
-        
-      <h5 > {{event.id}}</h5>
-      <h5>{{event.name}}</h5>
-      <h5>{{event.date}}</h5>
-      <h5>{{event.time}}</h5>
-      <h5>{{event.price | currency:'INR'}}</h5>
-      
-      
-
-      
+    <div class="card-body p-2" *ngFor="let event of eventList; let i=index">
+        <mat-card>
+      <mat-card-header style="font-weight:bold ;">Event Name:{{event.name}}</mat-card-header><br>
+      <mat-card-content>Event_ID:{{event.id}}</mat-card-content>
+      <mat-card-content>Date:{{event.date}}</mat-card-content>
+      <mat-card-content>Time:{{event.time}}</mat-card-content>
+      <mat-card-content>Price:{{event.price}}</mat-card-content><br>
+       <img mat-card-image [src]='event.imageUrl'
+       [title]="event.name"
+       height="150px"
+       width="200px"
+       [@enlarge]="currentState[i]"  
+        (mouseover)="clickAnimation(i)" (mouseout)="clickAnimation(i)">
+      </mat-card>
+     
+      </div>
     </div>
+    -->
+    <div *ngIf="eventList.length">
+
+      <div class="row">
+  
+          <div *ngFor="let event of eventList; let i = index " class="card" style="width:14rem;">
+  
+                     
+  
+                     <mat-card-header style="font-weight:bold ">Event Name:{{event.name}}</mat-card-header><br>
+  
+                     <mat-card-content>Event_ID:{{event.id}}</mat-card-content>
+  
+                     <mat-card-content>Date:{{event.date}}</mat-card-content>
+  
+                     <mat-card-content>Time:{{event.time}}</mat-card-content>
+  
+                     <mat-card-content>Price:{{event.price}}</mat-card-content><br>
+  
+                      <img mat-card-image [src]='event.imageUrl'
+  
+                      [title]="event.name"
+  
+                      height="150px"
+  
+                      width="200px"
+  
+                      [@enlarge]="currentState[i]"  
+  
+                       (mouseover)="clickAnimation(i)" (mouseout)="clickAnimation(i)"><!-- (mouseover)="applyAnimation($event)"
+  
+                          " -->
+  
+          </div>
+  
+         
+  
+      </div>
+  
   </div>
-    
+  
 </body>
 </html>
+<router-outlet></router-outlet> 

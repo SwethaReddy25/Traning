@@ -5,6 +5,8 @@ import { AnimalAddComponent } from './animals/animal-add.component';
 import { AnimalDetailsComponent } from './animals/animal-detail/animal-detail.component';
 import { AnimalsListComponent } from './animals/animal-list.component';
 import { BookComponent } from './book/book.component';
+import { EventBootComponent } from './event/event.component';
+import { FormComponent } from './form/form.component';
 import { HomeComponent } from './home/home.component';
 import { ShellComponent } from './home/shell.component';
 import { ProductAddComponent } from './products/product-add.component';
@@ -35,6 +37,21 @@ const routes:Routes=[{path:'',component:ShellComponent,
   canActivate:[AuthGuard],
   loadChildren:()=>import('../app/animal/animal.module').then(m=>m.AnimalModule)
 },
+
+{
+  path:'events',
+  component:EventBootComponent,
+  canActivate:[AuthGuard]
+
+},
+
+{
+  path:'form',
+  component:FormComponent ,
+  canActivate:[AuthGuard]
+
+},
+
 {path:'',redirectTo:'welcome',pathMatch:'full'},
 {path:'login',component:LoginComponent},
 // {path:'**',component:PagenotfoundComponent}

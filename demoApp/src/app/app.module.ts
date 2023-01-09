@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PentHouseComponent2 } from './pent-house/pent-house.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { FlagListComponent } from './flats/flag-list.component';
+
 
 import { FormBuilder, FormGroup, FormsModule, NgModel, ReactiveFormsModule } from '@angular/forms';
 
@@ -32,6 +32,12 @@ import { TodoModule } from './todo/todo.module';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
+import { FlatListComponent } from "./flats/flat-list.component";
+import { MaterialModule } from './material-module/material-module.module';
+import { FormComponent } from './form/form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+ 
+
 
 
 
@@ -44,7 +50,7 @@ import { EffectsModule } from '@ngrx/effects';
     AppComponent,
     PentHouseComponent2,
     WelcomeComponent,
-    FlagListComponent,
+   
   
    ShoppingCartComponent,
    EventBootComponent,
@@ -61,11 +67,16 @@ import { EffectsModule } from '@ngrx/effects';
    GreetingComponent,
    CardListComponent,
    CardComponent,
- 
+   
+   FlatListComponent,
+       FormComponent,
+   
     
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    MaterialModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
@@ -75,7 +86,7 @@ import { EffectsModule } from '@ngrx/effects';
     StoreDevtoolsModule.instrument(),
     CommonModule,
     EffectsModule.forRoot([])
-   
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
