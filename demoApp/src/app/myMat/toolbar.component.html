@@ -1,0 +1,11 @@
+
+<mat-toolbar color = "primary">
+    <!-- <span class = "gap">Home</span> -->
+    <button mat-raised-button color="accent" routerLink="/manager">Home</button>
+    <span class = "filler"></span>
+    <a class='nav-link' *ngIf="isLoggedIn" >Welcome {{userName}}</a>
+    <button class="float-right" *ngIf="!isLoggedIn" mat-raised-button routerLink="/login">Login</button>
+    <button (click)="logOut()" *ngIf="isLoggedIn" mat-raised-button>Logout</button>
+    <!-- <span>About Us</span> -->
+ </mat-toolbar>
+<router-outlet></router-outlet>

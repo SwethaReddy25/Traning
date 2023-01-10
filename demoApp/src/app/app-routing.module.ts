@@ -9,6 +9,8 @@ import { EventBootComponent } from './event/event.component';
 import { FormComponent } from './form/form.component';
 import { HomeComponent } from './home/home.component';
 import { ShellComponent } from './home/shell.component';
+import { ManagerHomeComponent } from './manager/manager-home.component';
+import { ToolbarComponent } from './myMat/toolbar.component';
 import { ProductAddComponent } from './products/product-add.component';
 import { ProductsListComponent } from './products/products-list.component';
  import { TrusteeComponent } from './trustee/trustee.component';
@@ -22,9 +24,17 @@ import { WelcomeComponent } from './welcome/welcome.component';
 // children:[{path:'addAnimal',component:AnimalAddComponent},]},
 //  {path:'products',component:ProductsListComponent,
 // children:[{path:'addProduct',component:ProductAddComponent},]},
-const routes:Routes=[{path:'',component:ShellComponent,
- children:[{path:'welcome',component:WelcomeComponent} 
- ,{
+const routes:Routes=[{path:'',component:ToolbarComponent,
+ children:[
+  {path:'manager',redirectTo:'manager',pathMatch:'full'},
+{path:'login',component:LoginComponent},
+{path:'manager',
+component:ManagerHomeComponent,
+canActivate:[AuthGuard],
+// loadChildren:()=>import('../app/manager/manager.module').then(m=>m.ManagerModule)
+ },
+{path:'welcome',component:WelcomeComponent},
+ {
   path:'products',
   component:ProductsListComponent,
   canActivate:[AuthGuard],
@@ -52,8 +62,8 @@ const routes:Routes=[{path:'',component:ShellComponent,
 
 },
 
-{path:'',redirectTo:'welcome',pathMatch:'full'},
-{path:'login',component:LoginComponent},
+// {path:'',redirectTo:'welcome',pathMatch:'full'},
+
 // {path:'**',component:PagenotfoundComponent}
 {path:'todo',loadChildren:()=>import('./todo/todo.module').then((m)=>m.TodoModule),}
  ]}

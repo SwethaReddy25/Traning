@@ -36,6 +36,8 @@ import { FlatListComponent } from "./flats/flat-list.component";
 import { MaterialModule } from './material-module/material-module.module';
 import { FormComponent } from './form/form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToolbarComponent } from './myMat/toolbar.component';
+import { ManagerHomeComponent } from './manager/manager-home.component';
  
 
 
@@ -70,6 +72,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
    
    FlatListComponent,
        FormComponent,
+       ToolbarComponent,
+       ManagerHomeComponent,
    
     
   ],
